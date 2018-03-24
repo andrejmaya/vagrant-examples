@@ -1,0 +1,1 @@
+download `centos-7.0-x86_64.box` file and install it in virtual box
