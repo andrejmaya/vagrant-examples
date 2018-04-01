@@ -1,1 +1,9 @@
-download `centos-7.0-x86_64.box` file and install it in virtual box
+## Prerequisites
+* Vargrant version > `2.0.3`
+
+## Usage
+You first have to download the vbguest plugin and then provision the vm 😎
+```
+vagrant plugin install vagrant-vbguest
+vagrant up
+```
