@@ -1,5 +1,5 @@
 yum update -y
-yum install -y telnet net-tools tcpdump iptables-services
+yum install -y kernel-headers kernel-devel telnet net-tools tcpdump iptables-services git
 systemctl enable iptables.service
 
 #install ansible
