@@ -1,8 +1,8 @@
 # Vagrant VM examples
 
 ## Ubuntu 
-for an `Ubuntu VM`, please go [here](./centos)
+for an `Ubuntu VM`, please go [here](./ubuntu)
 
 
-## Centos
+## Centos (2 machines)
 for an `Centos VM`, please go [here](./centos)
