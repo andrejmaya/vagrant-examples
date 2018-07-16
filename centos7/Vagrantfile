@@ -2,9 +2,10 @@ Vagrant.configure("2") do |config|
   config.vm.define "centos1" do |centos1|
     centos1.vm.box = "centos/7"
     centos1.vm.hostname = "centos1"
-    #centos1.vm.network "forwarded_port", guest: 8080, host: 58080
+    centos1.vm.network "forwarded_port", guest: 8080, host: 58080
 
-    centos1.vm.network "public_network", bridge: "en0: Wi-Fi (AirPort)"
+    #centos1.vm.network "public_network", bridge: "en0: Wi-Fi (AirPort)"
+    centos1.vm.network "public_network"
     centos1.vm.network "private_network", ip: "10.0.1.10"
     centos1.vm.provision :shell, path: "bootstrap.sh"
     centos1.vm.synced_folder ".", "/vagrant", disabled: true
@@ -19,11 +20,12 @@ Vagrant.configure("2") do |config|
     centos2.vm.box = "centos/7"
     centos2.vm.hostname = "centos2"
 
-    centos2.vm.network "public_network", bridge: "en0: Wi-Fi (AirPort)"
+    #centos2.vm.network "public_network", bridge: "en0: Wi-Fi (AirPort)"
+    centos2.vm.network "public_network"
     centos2.vm.network "private_network", ip: "10.0.1.15"
     centos2.vm.provision :shell, path: "bootstrap.sh"
     centos2.vm.synced_folder ".", "/vagrant", disabled: true
-    #centos2.vm.synced_folder "./data/centos2", "/vagrant_data"
+    centos2.vm.synced_folder "./data/centos2", "/vagrant_data"
 
     centos2.vm.provider "virtualbox" do |vb|
       vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]     
