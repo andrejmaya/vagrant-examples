@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  oracle:
+    image: sath89/oracle-12c
+    ports:
+    - 1521:1521
+    - 8080:8080
+    volumes:
+      - ${PWD}/docker/oracle:/opt/docker
